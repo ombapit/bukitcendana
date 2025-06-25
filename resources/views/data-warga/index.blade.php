@@ -14,9 +14,9 @@
   </form>
 
   {{-- Cards --}}
-  <div class="flex flex-wrap gap-4 justify-start">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
     @foreach ($wargas as $warga)
-        <div class="bg-white shadow rounded-lg p-4 w-full sm:w-full md:w-1/2 lg:w-[16.6%]">
+      <div class="bg-white shadow rounded-lg p-4">
         <h3 class="text-lg font-semibold mb-2 text-gray-800">{{ $warga->nama }}</h3>
         <p class="text-sm text-gray-600"><strong>Alamat:</strong> {{ $warga->alamat }}</p>
         <p class="text-sm text-gray-600"><strong>HP:</strong> {{ $warga->no_hp }}</p>
@@ -26,13 +26,13 @@
         </p>
         <p class="text-sm text-gray-600"><strong>Status Keluarga:</strong> {{ ucfirst($warga->status_keluarga) }}</p>
         <p class="text-sm text-gray-600"><strong>Kepala Keluarga:</strong> 
-            @if($warga->is_kepala_keluarga)
+          @if($warga->is_kepala_keluarga)
             <span class="text-green-600 font-semibold">Ya</span>
-            @else
+          @else
             <span class="text-red-600 font-semibold">Tidak</span>
-            @endif
+          @endif
         </p>
-        </div>
+      </div>
     @endforeach
   </div>
 

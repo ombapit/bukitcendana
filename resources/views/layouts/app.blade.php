@@ -14,7 +14,7 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div>
         <a href="{{ url('/') }}" class="flex items-center">
-          <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10">
+          <img src="{{ asset('/images/logo.png') }}" alt="Logo" class="h-10 mr-2">
           <h1 class="text-xl font-semibold text-white">{{ config('app.name') }}</h1>
         </a>
       </div>
