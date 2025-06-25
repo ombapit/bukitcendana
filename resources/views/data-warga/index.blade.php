@@ -20,8 +20,10 @@
         <h3 class="text-lg font-semibold mb-2 text-gray-800">{{ $warga->nama }}</h3>
         <p class="text-sm text-gray-600"><strong>Alamat:</strong> {{ $warga->alamat }}</p>
         <p class="text-sm text-gray-600"><strong>HP:</strong> {{ $warga->no_hp }}</p>
-        <p class="text-sm text-gray-600"><strong>Lahir:</strong> {{ \Carbon\Carbon::parse($warga->tanggal_lahir)->translatedFormat('d F Y') }}</p>
-        <p class="text-sm text-gray-600"><strong>Jenis Kelamin:</strong> {{ ucfirst($warga->jenis_kelamin) }}</p>
+        <p class="text-sm text-gray-600">
+          <strong>Jenis Kelamin:</strong>
+          {{ $warga->jenis_kelamin === 'L' ? 'Laki-laki' : ($warga->jenis_kelamin === 'P' ? 'Perempuan' : '-') }}
+        </p>
         <p class="text-sm text-gray-600"><strong>Status Keluarga:</strong> {{ ucfirst($warga->status_keluarga) }}</p>
         <p class="text-sm text-gray-600"><strong>Kepala Keluarga:</strong> 
             @if($warga->is_kepala_keluarga)
