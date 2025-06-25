@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransaksiKeuanganController;
+use App\Http\Controllers\DataWargaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/transaksi-keuangan', [TransaksiKeuanganController::class, 'index'])->name('transaksi.index');
+Route::get('/data-warga', [DataWargaController::class, 'index'])->name('warga.index');

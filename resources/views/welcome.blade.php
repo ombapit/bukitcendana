@@ -38,7 +38,7 @@
         </div>
         <!-- Text -->
         <div>
-            <h3 class="text-xl font-semibold mb-1 text-purple-600">Data Warga</h3>
+            <h3 class="text-xl font-semibold mb-1 text-purple-600"><a href="{{ url('/data-warga') }}">Data Warga</a></h3>
             <p class="text-gray-600">Informasi warga secara terpusat dan terstruktur.</p>
         </div>
         </div>
