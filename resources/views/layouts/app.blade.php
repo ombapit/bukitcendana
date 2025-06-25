@@ -12,9 +12,11 @@
   <!-- Navbar -->
   <header class="bg-gray-900 shadow">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div class="flex items-center">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10">
-        <h1 class="text-xl font-semibold text-white">{{ config('app.name') }}</h1>
+      <div>
+        <a href="{{ url('/') }}" class="flex items-center">
+          <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10">
+          <h1 class="text-xl font-semibold text-white">{{ config('app.name') }}</h1>
+        </a>
       </div>
       <nav class="hidden md:flex gap-6 text-gray-300">
         <a href="{{ url('/') }}" class="hover:text-white">Beranda</a>
