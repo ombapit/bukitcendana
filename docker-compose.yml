@@ -1,6 +1,8 @@
 services:
   app:
-    image: php:8.1-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: laravel_app_cendana
     working_dir: /var/www
     volumes:
