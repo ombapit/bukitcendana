@@ -8,7 +8,7 @@ Web Informasi warga dan pembayaran.
 - php artisan migrate
 - php artisan make:filament-user (untuk membuat user admin)
 - php artisan shield:generate --all (untuk generate role&permission)
-- php artisan shield:super_admin
+- php artisan shield:super-admin
 
 ## Running in Docker
 # Optional

@@ -11,6 +11,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\FileUpload;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -66,6 +67,16 @@ class TransaksiKeuanganResource extends Resource
                     ->numeric()
                     ->prefix('Rp')
                     ->required(),
+
+                FileUpload::make('bukti')
+                    ->label('Upload Bukti')
+                    ->directory('bukti-transaksi')
+                    ->preserveFilenames()
+                    ->maxSize(2048) // max 2MB
+                    ->acceptedFileTypes(['application/pdf', 'image/*']) // PDF & gambar
+                    ->downloadable()
+                    ->openable()
+                    ->previewable(true),
             ]);
     }
 
@@ -129,7 +140,10 @@ class TransaksiKeuanganResource extends Resource
                     ->label('Download Excel'),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->visible(fn ($record) => $record->kategori !== 'Pembayaran IPL'),
+                Tables\Actions\DeleteAction::make()
+                    ->visible(fn ($record) => $record->kategori !== 'Pembayaran IPL'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

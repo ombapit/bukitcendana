@@ -15,6 +15,7 @@ class TransaksiKeuangan extends Model
         'kategori',
         'deskripsi',
         'jumlah',
+        'bukti',
         'ipl_id',
     ];
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('kategori');
             $table->text('deskripsi')->nullable();
             $table->decimal('jumlah', 15, 2);
+            $table->text('bukti')->nullable();
             $table->foreignId('ipl_id')->nullable()->constrained('ipls')->cascadeOnDelete();
             $table->timestamps();
         });
