@@ -36,7 +36,7 @@ class WargaResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('nama')->required()->maxLength(255),
+                TextInput::make('nama')->required()->maxLength(255)->unique(ignoreRecord: true),
                 TextInput::make('alamat')->maxLength(255),
                 TextInput::make('no_hp')->label('No. HP')->maxLength(20),
                 DatePicker::make('tanggal_lahir')->label('Tanggal Lahir'),
