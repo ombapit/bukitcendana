@@ -23,7 +23,7 @@ class IplController extends Controller
             'warga_id' => 'required|exists:wargas,id', // Pastikan warga_id ada di tabel wargas
             'bulan' => 'required|integer|min:1|max:12',
             'tahun' => 'required|integer|min:2000|max:' . (date('Y') + 5), // Contoh range tahun
-            'jumlah' => 'required|numeric|min:0',
+            'jumlah' => 'required|numeric|min:0',            
         ]);
 
         // Jika validasi gagal
@@ -41,6 +41,7 @@ class IplController extends Controller
                 'bulan' => $request->bulan,
                 'tahun' => $request->tahun,
                 'jumlah' => $request->jumlah,
+                'catatan' => $request->catatan,
                 'tanggal_bayar' => Carbon::now()->format('Y-m-d'), // Otomatis diisi tanggal saat ini
             ]);
 
