@@ -43,7 +43,7 @@ class WargaController extends Controller
       'alamat' => 'required|string',
       'no_hp' => 'nullable|string|max:20',
       'tanggal_lahir' => 'nullable|date',
-      'jenis_kelamin' => 'required|in:L,P',
+      'jenis_kelamin' => 'nullable|in:L,P',
       'status_keluarga' => 'nullable|string|max:255',
       'is_kepala_keluarga' => 'boolean',
     ]);
