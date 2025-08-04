@@ -32,7 +32,7 @@ class Ipl extends Model
     {
         static::created(function ($pembayaran) {
             $pembayaran->transaksi()->create([
-                'tanggal' => now(),
+                'tanggal' => $pembayaran->tanggal_bayar,
                 'tipe' => 'pemasukan',
                 'kategori' => 'Pembayaran IPL',
                 'deskripsi' => 'IPL ' . bulanIndonesiaFromAngka($pembayaran->bulan) . ' ' . $pembayaran->tahun . ' - ' . $pembayaran->warga->nama,
