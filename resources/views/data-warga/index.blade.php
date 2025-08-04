@@ -14,7 +14,7 @@
   </form>
 
   {{-- Cards --}}
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4" id="warga-container">
     @foreach ($wargas as $warga)
       <div class="bg-white shadow rounded-lg p-4">
         <h3 class="text-lg font-semibold mb-2 text-gray-800">{{ $warga->nama }}</h3>
@@ -39,7 +39,7 @@
   {{-- Tombol/indikator loading untuk Infinite Scroll --}}
   <div id="scroll-loader" class="text-center my-6">
     @if ($wargas->hasMorePages())
-      <button id="load-more" class="bg-gray-200 px-4 py-2 rounded">Muat Lebih Banyak...</button>
+      <button id="load-more" class="bg-gray-400 px-4 py-2 rounded">Muat Lebih Banyak...</button>
     @endif
   </div>
 </div>
