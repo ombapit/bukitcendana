@@ -43,14 +43,14 @@ class Ipl extends Model
         static::updated(function ($pembayaran) {
             if ($pembayaran->transaksi) {
                 $pembayaran->transaksi->update([
-                    'tanggal' => now(),
+                    'tanggal' => $pembayaran->tanggal_bayar,
                     'jumlah' => $pembayaran->jumlah,
                     'deskripsi' => 'IPL ' . bulanIndonesiaFromAngka($pembayaran->bulan) . ' ' . $pembayaran->tahun . ' - ' . $pembayaran->warga->nama,
                 ]);
             } else {
                 // Jika belum ada transaksi terkait → buat baru
                 $pembayaran->transaksi()->create([
-                    'tanggal' => now(),
+                    'tanggal' => $pembayaran->tanggal_bayar,
                     'tipe' => 'pemasukan',
                     'kategori' => 'Pembayaran IPL',
                     'deskripsi' => 'IPL ' . bulanIndonesiaFromAngka($pembayaran->bulan) . ' ' . $pembayaran->tahun . ' - ' . $pembayaran->warga->nama,
